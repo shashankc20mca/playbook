@@ -4,6 +4,6 @@
 
  tasks:
  -name: check connectivity
-  ping
+  ping:
 
 
