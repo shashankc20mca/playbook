@@ -1,1 +1,9 @@
-MYFIRST
+---
+-name: first-playbook
+-hosts: localhost
+
+ tasks:
+ -name: check connectivity
+  ping
+
+
