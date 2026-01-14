@@ -1,0 +1,9 @@
+---
+- name: second
+  hosts: localhost
+  
+  tasks:
+   - name: install_package
+     yum3:
+      name: httpd
+      state: present
