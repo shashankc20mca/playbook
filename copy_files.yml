@@ -1,0 +1,14 @@
+---
+- name: copy files to remote server
+  hosts: all
+
+  tasks:
+  - name: copy files
+    copy: 
+     src: /tmp/testfile.txt
+     dest: /tmp/
+     owner: vagrant
+     group: vagrant
+     mode: 0777
+     backup: true #basically used to create the backup of previous file and new file is created
+

@@ -1,0 +1,9 @@
+--- 
+- name: change permissions
+  hosts: all
+
+  tasks:
+  - name: change permission
+    file:
+      path: /tmp/myfile.txt
+      mode: 0774

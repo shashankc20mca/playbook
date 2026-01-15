@@ -1,0 +1,27 @@
+---
+- name: file operations
+  hosts: all
+  become: true #means after login to remote machine as vagrant user change to root user its same as sudo -i
+  tasks:
+  - name: creating the file
+    file:
+      path: /tmp/shashank1.txt
+      state: touch
+      owner: vagrant
+      group: vagrant
+      mode: 0774
+
+  - name: creating a directory
+    file:
+      path: /tmp/shashankfolder
+      state: directory
+
+  - name: Deleting the file
+    file:
+      path: /tmp/shashank.txt
+      state: absent
+
+  - name: Deleting the folder
+    file: 
+     path: /tmp/shashankfolder
+     state: absent
