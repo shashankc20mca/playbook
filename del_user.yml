@@ -1,0 +1,10 @@
+---
+- name: user management
+  hosts: all
+  become: true
+  tasks:
+  - name: delete user
+    user:
+      name: nick
+      state: absent # just delete the user
+      remove: yes # this parameter deletes the user related home directory also 

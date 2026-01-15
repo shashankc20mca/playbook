@@ -1,0 +1,16 @@
+---
+- name: Cron job
+  hosts: all
+
+  tasks:
+  - name: add cron job
+    cron:
+      name: Run the test script #name given to the cron
+      minute: "*"
+      hour: "*"
+      day: "*"
+      month: "*"
+      weekday:  "*"
+      user: vagrant
+      job: /tmp/test.sh
+      disabled: yes # make the cron job as the comment so that it wont run

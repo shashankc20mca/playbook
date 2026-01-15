@@ -1,0 +1,12 @@
+---
+- name: Environmental variable
+  hosts: all
+
+  tasks:
+  - name: adding variable
+    cron:
+      name: test
+      env: yes
+      user: vagrant
+      job: /tmp/tesh.sh
+      insertbefore: VARR

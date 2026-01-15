@@ -1,0 +1,10 @@
+---
+- name: cron stop
+  hosts: all
+
+  tasks:
+  - name: remove the cron
+    cron:
+      name: Run the test script #name of the cronjob
+      state: absent
+      user: vagrant

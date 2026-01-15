@@ -1,0 +1,13 @@
+---
+- name: user management
+  hosts: all
+  become: true
+  tasks:
+  - name: User creation
+    user:
+      name: nick
+      comment: new user adding for QA team <optional>
+      shell: /bin/bash
+      home: /home/nick #by default if we dont specify also it will create the user under home directory if we want to create under specific path we can use 
+      groups: root,vagrant #add the users to these groups
+
