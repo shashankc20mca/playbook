@@ -1,0 +1,13 @@
+---
+- name: Install the service
+  hosts: all
+  become: true
+  vars:
+    - apps: [yum,httpd,vim,telnet]
+
+  tasks:
+  - name: installing services
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ apps }}"

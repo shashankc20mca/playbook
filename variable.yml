@@ -2,16 +2,18 @@
 - name: Install nginx on all servers
   hosts: all
   become: true
+  vars:
+    - app: nginx
     #become_method: sudo
   tasks:
    - name: installing the nginx
      yum:
-       name: nginx
+       name: "{{ app }}"
        state: present
-     tags: install-nginx    
+     tags: install-nginx
    - name: starting the service
      service:
-       name: nginx
+       name: "{{ app }}" 
        state: started
        enabled: true
      tags: service-nginx

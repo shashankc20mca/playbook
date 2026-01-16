@@ -1,0 +1,16 @@
+---
+- name: user create
+  hosts: all
+  become: true
+
+  tasks:
+  - name: create user
+    user:
+      name: "{{ item }}"
+      shell: /bin/bash
+    loop:
+      - shashank
+      - dheeraj
+      - shilpa
+      - chandru
+

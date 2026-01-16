@@ -1,0 +1,15 @@
+---
+- name: Install the service
+  hosts: all
+  become: true
+
+  tasks:
+  - name: installing services
+    yum:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - yum
+      - httpd
+      - vim
+      - telnet                    
