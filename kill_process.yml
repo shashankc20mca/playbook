@@ -1,0 +1,12 @@
+---
+- name: Find process and kill
+  hosts: all
+  become: true
+
+  tasks:
+  - name: killing the process
+    ignore_errors: yes
+    shell: "pkill -9 nginx" 
+  #ps -ef | grep nginx | grep -v grep (finding all the process running related to nginx)
+  #pkill -9 nginx (kill all the process running releated to nginx)
+
