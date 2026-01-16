@@ -1,0 +1,6 @@
+---
+- name: install httpd and firewall changes
+  hosts: all
+  roles:
+    - httpd_setup
+    - fwd_service
